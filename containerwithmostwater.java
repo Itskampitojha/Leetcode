@@ -1,18 +1,17 @@
-class solution {
-    public int maxArea(int[] height) {
-        int l = 0;
-        int r = height.length-1;
-        int max = 0;
-        while(l<r){
-            int lh = height[l];
-            int rh = height[r];
-            int min_h = Math.min(lh , rh);
-            int len = r - 1;
-            int curr_area = min_h*len;
-            max = Math.max(max, curr_area);
-            if(lh < rh) l++;
-            else r--;
+class Solution {
+    public int titleToNumber(String s) {
+        int ans = 0;
+        int p = 0;
+        for (int i = s.length() -1; i>=0; i--){
+            char c = s.charAt(i);
+            int val = (int)c - 65 + 1;
+            ans += val*Math.pow(26, p);
+            p++;
+
+              
         }
-        return max;
+
+        return ans;
+        
     }
 }
